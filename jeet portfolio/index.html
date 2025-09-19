@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flipkart Clone</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <style>
+      /* Smooth hover effects for product cards */
+      .product-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .product-card:hover {
+        transform: translateY(-5px);
+      }
+
+      /* Button press effect */
+      .btn-click:active {
+        transform: scale(0.95);
+      }
+
+      /* Mobile responsiveness tweak for search bar */
+      @media (max-width: 768px) {
+        form {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body class="min-h-screen bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-md">
+      <div class="container mx-auto px-4 py-3">
+        <div class="flex items-center justify-between">
+          <!-- Logo -->
+          <div class="flex items-center">
+            <div class="text-blue-600 font-bold text-2xl mr-4">Flipkart</div>
+            <div class="text-xs text-gray-600 italic">Plus</div>
+          </div>
+
+          <!-- Search Bar -->
+          <form class="flex-1 max-w-2xl mx-4">
+            <div class="relative">
+              <input
+                type="text"
+                placeholder="Search for products, brands and more"
+                class="w-full py-2 px-4 pr-10 rounded-sm border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+              <button
+                type="submit"
+                class="absolute right-0 top-0 h-full px-3 text-gray-600"
+              >
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
+          </form>
+
+          <!-- User Actions -->
+          <div class="hidden md:flex items-center space-x-6">
+            <button class="flex items-center text-blue-600 font-medium">
+              <i class="fas fa-user mr-1"></i> Login
+            </button>
+            <button class="flex items-center text-gray-700">
+              <i class="fas fa-heart mr-1"></i> Wishlist
+            </button>
+            <button class="flex items-center text-gray-700">
+              <i class="fas fa-shopping-cart mr-1"></i> Cart
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Category Navigation -->
+    <nav class="bg-white shadow-sm hidden md:block">
+      <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center py-3 text-gray-700">
+          <a href="#" class="hover:text-blue-600 font-medium text-sm"
+            >Electronics</a
+          >
+          <a href="#" class="hover:text-blue-600 font-medium text-sm"
+            >Fashion</a
+          >
+          <a href="#" class="hover:text-blue-600 font-medium text-sm">Home</a>
+          <a href="#" class="hover:text-blue-600 font-medium text-sm"
+            >Appliances</a
+          >
+          <a href="#" class="hover:text-blue-600 font-medium text-sm">Beauty</a>
+          <a href="#" class="hover:text-blue-600 font-medium text-sm">Toys</a>
+          <a href="#" class="hover:text-blue-600 font-medium text-sm">Sports</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Banner -->
+    <section class="container mx-auto px-4 py-6">
+      <div
+        class="bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg p-8 text-white"
+      >
+        <h2 class="text-3xl font-bold mb-4">Big Billion Days Sale!</h2>
+        <p class="text-lg mb-6">
+          Up to 80% off on electronics, fashion, and more
+        </p>
+        <button
+          class="bg-white text-blue-600 font-bold py-2 px-6 rounded-lg hover:bg-gray-100 transition-colors"
+        >
+          Shop Now
+        </button>
+      </div>
+    </section>
+
+    <!-- Deals Section -->
+    <section class="container mx-auto px-4 py-6">
+      <h2 class="text-2xl font-bold mb-6">Best Deals</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Product Card 1 -->
+        <div
+          class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
+        >
+          <img
+            src="https://placehold.co/300x200"
+            alt="Smartphone"
+            class="w-full h-48 object-cover"
+          />
+          <div class="p-4">
+            <h3 class="font-semibold text-lg mb-2">Smartphone X1</h3>
+            <p class="text-gray-600 mb-2">6GB RAM, 128GB Storage</p>
+            <div class="flex items-center justify-between">
+              <span class="text-2xl font-bold text-green-600">₹24,999</span>
+              <span class="text-sm text-gray-500 line-through">₹29,999</span>
+            </div>
+            <button
+              class="w-full mt-4 bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition-colors"
+            >
+              Add to Cart
+            </button>
+          </div>
+        </div>
+
+        <!-- Product Card 2 -->
+        <div
+          class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
+        >
+          <img
+            src="https://placehold.co/300x200"
+            alt="Wireless Headphones"
+            class="w-full h-48 object-cover"
+          />
+          <div class="p-4">
+            <h3 class="font-semibold text-lg mb-2">Wireless Headphones</h3>
+            <p class="text-gray-600 mb-2">Noise Cancellation, 30hrs Battery</p>
+            <div class="flex items-center justify-between">
+              <span class="text-2xl font-bold text-green-600">₹5,999</span>
+              <span class="text-sm text-gray-500 line-through">₹7,999</span>
+            </div>
+            <button
+              class="w-full mt-4 bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition-colors"
+            >
+              Add to Cart
+            </button>
+          </div>
+        </div>
+
+        <!-- Product Card 3 -->
+        <div
+          class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
+        >
+          <img
+            src="https://placehold.co/300x200"
+            alt="Smart TV"
+            class="w-full h-48 object-cover"
+          />
+          <div class="p-4">
+            <h3 class="font-semibold text-lg mb-2">55" Smart TV</h3>
+            <p class="text-gray-600 mb-2">4K Ultra HD, Android TV</p>
+            <div class="flex items-center justify-between">
+              <span class="text-2xl font-bold text-green-600">₹39,999</span>
+              <span class="text-sm text-gray-500 line-through">₹49,999</span>
+            </div>
+            <button
+              class="w-full mt-4 bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition-colors"
+            >
+              Add to Cart
+            </button>
+          </div>
+        </div>
+
+        <!-- Product Card 4 -->
+        <div
+          class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
+        >
+          <img
+            src="https://placehold.co/300x200"
+            alt="Fitness Watch"
+            class="w-full h-48 object-cover"
+          />
+          <div class="p-4">
+            <h3 class="font-semibold text-lg mb-2">Fitness Smartwatch</h3>
+            <p class="text-gray-600 mb-2">
+              Heart Rate Monitor, Water Resistant
+            </p>
+            <div class="flex items-center justify-between">
+              <span class="text-2xl font-bold text-green-600">₹3,499</span>
+              <span class="text-sm text-gray-500 line-through">₹4,999</span>
+            </div>
+            <button
+              class="w-full mt-4 bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition-colors"
+            >
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 mt-12">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div>
+            <h3 class="text-lg font-semibold mb-4">About Flipkart</h3>
+            <ul class="space-y-2">
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white"
+                  >Contact Us</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white">About Us</a>
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white">Careers</a>
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white"
+                  >Flipkart Stories</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Help</h3>
+            <ul class="space-y-2">
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white">Payments</a>
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white">Shipping</a>
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white">Returns</a>
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white">FAQ</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Policy</h3>
+            <ul class="space-y-2">
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white"
+                  >Return Policy</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white"
+                  >Terms of Use</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white">Security</a>
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white">Privacy</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Social</h3>
+            <ul class="space-y-2">
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white">Facebook</a>
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white">Twitter</a>
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white">YouTube</a>
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white">Instagram</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400"
+        >
+          <p>© 2023 Flipkart Clone. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+    <script>
+      // Handle Search Submit
+      document.querySelector("form").addEventListener("submit", function (e) {
+        e.preventDefault();
+        const query = this.querySelector("input").value.trim();
+        if (query) {
+          alert("Searching for: " + query);
+          // You can redirect to a search page instead:
+          // window.location.href = "search.html?q=" + encodeURIComponent(query);
+        }
+      });
+
+      // Handle "Add to Cart" Buttons
+      const cartButtons = document.querySelectorAll(".bg-blue-600");
+      cartButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          alert("Item added to cart!");
+          btn.classList.add("bg-green-600");
+          btn.textContent = "Added ✅";
+          setTimeout(() => {
+            btn.classList.remove("bg-green-600");
+            btn.classList.add("bg-blue-600");
+            btn.textContent = "Add to Cart";
+          }, 1500);
+        });
+      });
+    </script>
+  </body>
+</html>
